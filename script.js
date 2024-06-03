@@ -43,7 +43,7 @@
         const div = document.createElement("div");
         fetch("db.json").then(res => res.json()).then(function(data) {
             length = data.length;
-            id = id || length;
+            if (!id || id > length) location.search = "?id=" + length;
             const res = data[id - 1];
             const main = document.querySelector("main");
             h1.textContent = res.title;
@@ -86,7 +86,7 @@
         const div = document.createElement("div");
         fetch("db.json").then(res => res.json()).then(function(data) {
             length = data.length;
-            id = id || length;
+            if (!id || id > length) location.search = "?id=" + length;
             const res = data[id - 1];
             const main = document.querySelector("main");
             h1.textContent = res.title;
