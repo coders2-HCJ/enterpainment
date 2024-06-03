@@ -39,16 +39,16 @@
     if (location.href.includes("/comics")) {
         const h1 = document.createElement("h1");
         const img = new Image;
-		const article = document.createElement("article");
+        const article = document.createElement("article");
         const div = document.createElement("div");
         fetch("db.json").then(res => res.json()).then(function(data) {
             length = data.length;
-            id = id || length;
+            if (!id || id > length) location.search = "?id=" + length;
             const res = data[id - 1];
             const main = document.querySelector("main");
             h1.textContent = res.title;
             img.setAttribute("src", res.image + ".png");
-			article.innerHTML = res.description;
+            article.innerHTML = res.description;
         });
         ["begin", "prev", "random", "next", "end"].forEach(function(purpose) {
             const button = document.createElement("img");
@@ -74,24 +74,24 @@
         });
         main.appendChild(h1);
         main.appendChild(img);
-		main.appendChild(article);
+        main.appendChild(article);
         main.appendChild(div);
     }
     // music
-	if (location.href.includes("/music")) {
+    if (location.href.includes("/music")) {
         const h1 = document.createElement("h1");
         const audio = new Audio;
-		audio.setAttribute("controls", true);
-		const article = document.createElement("article");
+        audio.setAttribute("controls", true);
+        const article = document.createElement("article");
         const div = document.createElement("div");
         fetch("db.json").then(res => res.json()).then(function(data) {
             length = data.length;
-            id = id || length;
+            if (!id || id > length) location.search = "?id=" + length;
             const res = data[id - 1];
             const main = document.querySelector("main");
             h1.textContent = res.title;
             audio.setAttribute("src", res.audio + ".mp3");
-			article.innerHTML = res.description;
+            article.innerHTML = res.description;
         });
         ["begin", "prev", "random", "next", "end"].forEach(function(purpose) {
             const button = document.createElement("img");
@@ -117,7 +117,7 @@
         });
         main.appendChild(h1);
         main.appendChild(audio);
-		main.appendChild(article);
+        main.appendChild(article);
         main.appendChild(div);
     }
     // about
