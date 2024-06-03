@@ -1,0 +1,58 @@
+@font-face {
+    font-family: "BM Hanna";
+    src: url(bm-hanna.ttf);
+}
+* {
+    font-family: "BM Hanna";
+    user-select: none;
+}
+body {
+    margin: 0;
+}
+nav {
+    background-color: rgb(200, 150, 100);
+    padding: 30px;
+    position: absolute;
+    top: 0;
+    width: calc(15% - 60px);
+    height: calc(100% - 60px);
+}
+nav a {
+    font-size: 30px;
+    text-decoration: none;
+    color: white;
+}
+nav a img {
+    mix-blend-mode: multiply;
+    width: 100%;
+}
+nav a:hover {
+    filter: invert(100%);
+}
+nav hr {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+main {
+    background-color: rgb(200, 180, 160);
+    position: absolute;
+    left: 15%;
+    width: calc(85% - 100px);
+    height: calc(100% - 100px);
+    overflow: auto;
+    text-align: center;
+    padding: 50px;
+    font-size: 30px;
+}
+main img {
+    width: 50%;
+}
+main div img {
+    margin: 20px;
+    padding: 0;
+    border: none;
+    width: auto;
+    height: 50px;
+    background-color: transparent;
+    cursor: pointer;
+}
