@@ -44,8 +44,11 @@ main {
     padding: 50px;
     font-size: 30px;
 }
-main img {
-    width: 50%;
+main img, main video {
+    width: 70%;
+}
+main article {
+    margin-top: 30px;
 }
 main div img {
     margin: 20px;
